@@ -1,0 +1,51 @@
+# E-commerce API - Endpoints Documentation
+
+## Products
+
+| Method | Endpoint | Description | Expected Status |
+|---|---|---|---|
+| GET | /api/products | Get all products | 200 |
+| GET | /api/products/:id | Get one product | 200 / 404 |
+| POST | /api/products | Create a product | 201 / 400 / 409 |
+| PUT | /api/products/:id | Update a product | 200 / 404 |
+| PATCH | /api/products/:id/deactivate | Deactivate a product | 200 / 404 |
+| DELETE | /api/products/:id | Delete a product | 200 / 404 |
+
+## Categories
+
+| Method | Endpoint | Description | Expected Status |
+|---|---|---|---|
+| GET | /api/categories | Get all categories | 200 |
+| GET | /api/categories/:id | Get one category | 200 / 404 |
+| POST | /api/categories | Create a category | 201 / 400 / 409 |
+| PUT | /api/categories/:id | Update a category | 200 / 404 |
+| DELETE | /api/categories/:id | Delete a category | 200 / 404 |
+
+## Users
+
+| Method | Endpoint | Description | Expected Status |
+|---|---|---|---|
+| GET | /api/users | Get all users | 200 |
+| GET | /api/users/:id | Get one user | 200 / 404 |
+| POST | /api/users | Create a user | 201 / 400 / 409 |
+| PATCH | /api/users/:id/status | Activate or deactivate a user | 200 / 404 |
+
+## Common HTTP Status Codes
+
+- **200** — Operation successful
+- **201** — Record created successfully
+- **400** — Invalid or incomplete data
+- **404** — Record not found
+- **409** — Duplicate data or conflict
+- **500** — Internal server error
+
+## Validation and Error Cases
+
+- Empty required fields → 400
+- Negative price → 400
+- Negative stock quantity → 400
+- Duplicate SKU → 409
+- Duplicate email → 409
+- Non-existing record → 404
+- Unknown API route → 404
+- Unexpected server/database error → 500
